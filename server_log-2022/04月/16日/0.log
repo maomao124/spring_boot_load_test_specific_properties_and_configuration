@@ -1,0 +1,109 @@
+2022-04-16 13:16:43.866  INFO 12192 --- [main] ficPropertiesAndConfigurationApplication : Starting SpringBootLoadTestSpecificPropertiesAndConfigurationApplication using Java 16.0.2 on mao with PID 12192 (H:\程序\大三下期\spring_boot加载测试专用属性和配置\target\classes started by mao in H:\程序\大三下期\spring_boot加载测试专用属性和配置)
+2022-04-16 13:16:43.868 DEBUG 12192 --- [main] ficPropertiesAndConfigurationApplication : Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-04-16 13:16:43.869  INFO 12192 --- [main] ficPropertiesAndConfigurationApplication : The following 1 profile is active: "dev"
+2022-04-16 13:16:44.450  INFO 12192 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-16 13:16:44.457  INFO 12192 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-16 13:16:44.457  INFO 12192 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-16 13:16:44.526  INFO 12192 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-16 13:16:44.526  INFO 12192 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 620 ms
+2022-04-16 13:16:44.558  WARN 12192 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'propertiesAndArgs': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'test.prop' in value "${test.prop}"
+2022-04-16 13:16:44.560  INFO 12192 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-04-16 13:16:44.568  INFO 12192 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-04-16 13:16:44.586 ERROR 12192 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'propertiesAndArgs': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'test.prop' in value "${test.prop}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:405) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.18.jar:5.3.18]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.18.jar:5.3.18]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.6.jar:2.6.6]
+	at mao.spring_boot_load_test_specific_properties_and_configuration.SpringBootLoadTestSpecificPropertiesAndConfigurationApplication.main(SpringBootLoadTestSpecificPropertiesAndConfigurationApplication.java:14) ~[classes/:na]
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'test.prop' in value "${test.prop}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:180) ~[spring-core-5.3.18.jar:5.3.18]
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126) ~[spring-core-5.3.18.jar:5.3.18]
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239) ~[spring-core-5.3.18.jar:5.3.18]
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210) ~[spring-core-5.3.18.jar:5.3.18]
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:191) ~[spring-context-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:936) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1330) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.18.jar:5.3.18]
+	... 17 common frames omitted
+
+2022-04-16 13:17:06.302  INFO 11504 --- [main] ficPropertiesAndConfigurationApplication : Starting SpringBootLoadTestSpecificPropertiesAndConfigurationApplication using Java 16.0.2 on mao with PID 11504 (H:\程序\大三下期\spring_boot加载测试专用属性和配置\target\classes started by mao in H:\程序\大三下期\spring_boot加载测试专用属性和配置)
+2022-04-16 13:17:06.305 DEBUG 11504 --- [main] ficPropertiesAndConfigurationApplication : Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-04-16 13:17:06.305  INFO 11504 --- [main] ficPropertiesAndConfigurationApplication : The following 1 profile is active: "dev"
+2022-04-16 13:17:06.876  INFO 11504 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-16 13:17:06.882  INFO 11504 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-16 13:17:06.883  INFO 11504 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-16 13:17:06.951  INFO 11504 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-16 13:17:06.951  INFO 11504 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 609 ms
+2022-04-16 13:17:06.982  WARN 11504 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'propertiesAndArgs': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'test.prop' in value "${test.prop}"
+2022-04-16 13:17:06.984  INFO 11504 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-04-16 13:17:06.994  INFO 11504 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-04-16 13:17:07.009 ERROR 11504 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'propertiesAndArgs': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'test.prop' in value "${test.prop}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:405) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.18.jar:5.3.18]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.18.jar:5.3.18]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.6.jar:2.6.6]
+	at mao.spring_boot_load_test_specific_properties_and_configuration.SpringBootLoadTestSpecificPropertiesAndConfigurationApplication.main(SpringBootLoadTestSpecificPropertiesAndConfigurationApplication.java:14) ~[classes/:na]
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'test.prop' in value "${test.prop}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:180) ~[spring-core-5.3.18.jar:5.3.18]
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126) ~[spring-core-5.3.18.jar:5.3.18]
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239) ~[spring-core-5.3.18.jar:5.3.18]
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210) ~[spring-core-5.3.18.jar:5.3.18]
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:191) ~[spring-context-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:936) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1330) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.18.jar:5.3.18]
+	... 17 common frames omitted
+
+2022-04-16 13:19:56.438  INFO 15240 --- [main] m.s.PropertiesAndArgsTest                : Starting PropertiesAndArgsTest using Java 16.0.2 on mao with PID 15240 (started by mao in H:\程序\大三下期\spring_boot加载测试专用属性和配置)
+2022-04-16 13:19:56.439 DEBUG 15240 --- [main] m.s.PropertiesAndArgsTest                : Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-04-16 13:19:56.440  INFO 15240 --- [main] m.s.PropertiesAndArgsTest                : The following 1 profile is active: "dev"
+2022-04-16 13:19:57.689  INFO 15240 --- [main] m.s.PropertiesAndArgsTest                : Started PropertiesAndArgsTest in 1.652 seconds (JVM running for 2.501)
+2022-04-16 13:21:15.772  INFO 15008 --- [main] m.s.PropertiesAndArgsTest                : Starting PropertiesAndArgsTest using Java 16.0.2 on mao with PID 15008 (started by mao in H:\程序\大三下期\spring_boot加载测试专用属性和配置)
+2022-04-16 13:21:15.773 DEBUG 15008 --- [main] m.s.PropertiesAndArgsTest                : Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-04-16 13:21:15.774  INFO 15008 --- [main] m.s.PropertiesAndArgsTest                : The following 1 profile is active: "dev"
+2022-04-16 13:21:17.064  INFO 15008 --- [main] m.s.PropertiesAndArgsTest                : Started PropertiesAndArgsTest in 1.698 seconds (JVM running for 2.613)
+2022-04-16 13:22:54.696  INFO 1512 --- [main] m.s.PropertiesAndArgsTest                : Starting PropertiesAndArgsTest using Java 16.0.2 on mao with PID 1512 (started by mao in H:\程序\大三下期\spring_boot加载测试专用属性和配置)
+2022-04-16 13:22:54.697 DEBUG 1512 --- [main] m.s.PropertiesAndArgsTest                : Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-04-16 13:22:54.698  INFO 1512 --- [main] m.s.PropertiesAndArgsTest                : The following 1 profile is active: "dev"
